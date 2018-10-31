@@ -23,9 +23,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/clean-blog.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/clean-blog.js"
+            ]
           },
           "configurations": {
             "production": {
