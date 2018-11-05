@@ -4,3 +4,24 @@ header_subtitle="A Blog Theme by Start Bootstrap"
 [header_img]="'assets/img/home-bg.jpg'"
 >
 </app-page-header>
+
+  <!-- Main Content -->
+  <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+         <app-post-preview *ngFor="let item of items | async"
+         blog_id = {{item.id}}
+         blog_title = {{item.title}}
+         blog_subtitle = {{item.sub_title}}
+         blog_author = {{item.author}}
+         blog_date = {{item.date}}
+         ></app-post-preview>
+
+            <!-- Pager -->
+            <div class="clearfix">
+              <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  

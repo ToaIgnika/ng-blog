@@ -1,4 +1,5 @@
 export class Post {
+    id : string;
     title : string;
     sub_title : string;
     bg_image : string;

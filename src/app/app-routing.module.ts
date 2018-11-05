@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { IndexComponent } from './index/index.component';
 import { PostComponent } from './post/post.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'index', component: IndexComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent }, 
-  { path: 'post/:id', component: PostComponent }
+  { path: 'post/:id', component: PostComponent },
+  { path: 'dashboard', component: DashboardComponent }
 
 ];
 

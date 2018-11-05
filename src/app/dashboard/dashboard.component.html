@@ -1,3 +1,18 @@
-<p>
-  dashboard works!
-</p>
+<app-page-header header_title="Dashboard" header_subtitle="Expand your universe." [header_img]="'assets/img/dashboard-bg.jpg'">
+</app-page-header>
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div *ngIf="afAuth.user | async as user; else showLogin">
+      <h1>Hello {{ user.displayName }}!</h1>
+      <a class="btn btn-success">Create post</a>
+      <li *ngFor="let item of items | async">
+        <a href="">{{ item.title }}</a>
+        <a class="btn btn-dark"href="">edit</a>
+      </li>
+    </div>
+    <ng-template #showLogin>
+      <button class="btn btn-primary" (click)="login()">Login with Google</button>
+    </ng-template>
+  </div>
+</div>

@@ -20,6 +20,12 @@
             <li class="nav-item">
               <a class="nav-link" routerLink="/contact">Contact</a>
             </li>
+            <li class="nav-item" *ngIf="afAuth.user | async as user;">
+                <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item" *ngIf="afAuth.user | async as user;">
+                <a class="nav-link" routerLink="/" (click)="logout()">Logout</a>
+            </li>
           </ul>
         </div>
       </div>

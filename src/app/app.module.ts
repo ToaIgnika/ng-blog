@@ -14,7 +14,9 @@ import { PostComponent } from './post/post.component';
 import { CovalentMarkdownModule } from '@covalent/markdown';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PostPreviewComponent } from './index/post-preview/post-preview.component';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     IndexComponent,
     FooterComponent,
     PostComponent,
-    DashboardComponent
+    DashboardComponent,
+    PostPreviewComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CovalentMarkdownModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
 
   ],
   providers: [],
