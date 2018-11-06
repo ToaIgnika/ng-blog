@@ -5,6 +5,7 @@ import { ContactComponent } from './contact/contact.component';
 import { IndexComponent } from './index/index.component';
 import { PostComponent } from './post/post.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateComponent } from './dashboard/create/create.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent }, 
   { path: 'post/:id', component: PostComponent },
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard/create', component: CreateComponent }
 
 ];
 

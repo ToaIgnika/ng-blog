@@ -12,11 +12,14 @@ import { IndexComponent } from './index/index.component';
 import { FooterComponent } from './footer/footer.component';
 import { PostComponent } from './post/post.component';
 import { CovalentMarkdownModule } from '@covalent/markdown';
+import { CovalentTextEditorModule } from '@covalent/text-editor';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PostPreviewComponent } from './index/post-preview/post-preview.component';
+import { CreateComponent } from './dashboard/create/create.component';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 
 @NgModule({
@@ -30,16 +33,18 @@ import { PostPreviewComponent } from './index/post-preview/post-preview.componen
     FooterComponent,
     PostComponent,
     DashboardComponent,
-    PostPreviewComponent
+    PostPreviewComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CovalentMarkdownModule,
+    CovalentTextEditorModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

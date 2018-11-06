@@ -5,7 +5,7 @@
   <div class="row">
     <div *ngIf="afAuth.user | async as user; else showLogin">
       <h1>Hello {{ user.displayName }}!</h1>
-      <a class="btn btn-success">Create post</a>
+      <a class="btn btn-success" routerLink="/dashboard/create">Create post</a>
       <li *ngFor="let item of items | async">
         <a href="">{{ item.title }}</a>
         <a class="btn btn-dark"href="">edit</a>

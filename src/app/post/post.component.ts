@@ -3,6 +3,8 @@ import { Post } from '../post';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { PostService } from '../post.service'
+import { CovalentMarkdownModule } from '@covalent/markdown';
 
 
 @Component({
@@ -25,23 +27,31 @@ export class PostComponent implements OnInit {
 
   items: Observable<any[]>;
   private itemDoc: AngularFirestoreDocument<Post>;
-  post: Observable<Post>;
+  post_obs: Observable<Post>;
+  post : Post;
+  loaded : boolean;
   constructor(
     private afs: AngularFirestore,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private postServ : PostService
     ) {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = '' + this.route.snapshot.paramMap.get('id');
+    //this.loaded = true;
+    this.loaded = false;
+
     this.itemDoc = afs.doc<Post>('items/' + id);
-    this.post = this.itemDoc.valueChanges();
-    console.log(this.itemDoc);
-    console.log(this.post);
-  }
-  update(post: Post) {
-    this.itemDoc.update(post);
-    console.log(this.post)
+    this.post_obs = this.itemDoc.valueChanges();
+
+    this.post_obs.subscribe((p) => {
+      this.post = p;
+      this.loaded = true;
+    });
+    //this.post = postServ.getPost(id);
+       
+   
+    
   }
 
   ngOnInit() {
   }
-
 }
