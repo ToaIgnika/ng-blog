@@ -23,10 +23,6 @@ export class DashboardComponent implements OnInit {
     private afs: AngularFirestore) {
       this.itemsCollection = afs.collection<Post>('items');
       this.items = this.itemsCollection.valueChanges();
-     // this.itemDoc = afs.doc<Post>('items/');
-      //this.post = this.itemDoc.valueChanges();
-      //console.log(this.itemDoc);
-      //console.log(this.post);
   }
 
 
@@ -36,6 +32,13 @@ export class DashboardComponent implements OnInit {
 
   logout() {
     this.afAuth.auth.signOut();
+  }
+
+  deletePost(id) {
+    if(confirm("Are you sure to permanently delete this post?")) {
+      console.log("Implement delete functionality here");
+      this.afs.doc<Post>('items/' + id).delete(); 
+    }
   }
 
   ngOnInit() {

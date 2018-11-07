@@ -2,17 +2,22 @@
 </app-page-header>
 <!-- Main Content -->
 <div class="container">
-  <div class="row">
-    <div *ngIf="afAuth.user | async as user; else showLogin">
-      <h1>Hello {{ user.displayName }}!</h1>
+  <div class="row text-center">
+    <div class="col" *ngIf="afAuth.user | async as user; else showLogin">
       <a class="btn btn-success" routerLink="/dashboard/create">Create post</a>
-      <li *ngFor="let item of items | async">
-        <a href="">{{ item.title }}</a>
-        <a class="btn btn-dark"href="">edit</a>
-      </li>
+      <div class="card" *ngFor="let item of items | async">
+        <div class="card-body">
+          <h4 class="card-title">{{ item.title }}</h4>
+          <p class="card-text">{{ item.sub_title }}</p>
+          <a routerLink="/dashboard/edit/{{item.id}}" class="card-link btn btn-info">Edit</a>
+          <button (click)="deletePost(item.id)" class="card-link btn btn-danger">Delete</button>
+        </div>
+      </div>
     </div>
     <ng-template #showLogin>
-      <button class="btn btn-primary" (click)="login()">Login with Google</button>
+      <div class="row ">
+        <button class="btn btn-primary" style="margin: auto" (click)="login()">Login with Google</button>
+      </div>
     </ng-template>
   </div>
 </div>

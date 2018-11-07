@@ -46,12 +46,14 @@ export class PostComponent implements OnInit {
       this.post = p;
       this.loaded = true;
     });
-    //this.post = postServ.getPost(id);
-       
-   
-    
   }
 
   ngOnInit() {
   }
+
+  saveDraft() {
+    console.log(this.post.text);
+    //this.str = this._textEditor.value;
+  }
+
 }

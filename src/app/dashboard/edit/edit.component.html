@@ -1,15 +1,15 @@
-<!-- Page Header -->
+<div>
+  <!-- Page Header -->
 <header class="masthead" [style.backgroundImage]="'url(' + post.bg_image+ ')'">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-heading">
-          <h3> <input [(ngModel)]="post.id" placeholder="unique post id"></h3>
+            <h3> <input [(ngModel)]="post.id" placeholder="unique post id"></h3>
           <h1> <input [(ngModel)]="post.title" placeholder="title"></h1>
           <h2 class="subheading"> <input [(ngModel)]="post.sub_title" placeholder="subtitle"></h2>
           <h3> <input [(ngModel)]="post.bg_image" placeholder="cover image url"></h3>
-
         </div>
       </div>
     </div>
@@ -21,20 +21,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <td-text-editor [(ngModel)]="post.text" [options]="options" #textEditor></td-text-editor>
+          <td-text-editor [(ngModel)]="post.text" [options]="options" #textEditor></td-text-editor>
       </div>
     </div>
-    <div class="row text-center">
-      <div class="col-lg-4">
-        <button class="btn btn-success" (click)="publishPost()">publish</button>
-      </div>
-      <div class="col-lg-4">
-        <button class="btn btn-info" (click)="saveDraft()">save draft</button>
-      </div>
-      <div class="col-lg-4">
-        <button class="btn btn-danger">discard</button>
-      </div>
-    </div>
-
   </div>
 </article>
+<button class="btn btn-success" (click)="publishPost()">publish changes</button>
+<button class="btn btn-danger">delete</button>
+</div>
+

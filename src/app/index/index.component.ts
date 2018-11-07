@@ -9,6 +9,7 @@ import { Post } from '../post';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
+  title = 'Blog';
 
   items: Observable<any[]>;
   private itemsCollection: AngularFirestoreCollection<Post>;

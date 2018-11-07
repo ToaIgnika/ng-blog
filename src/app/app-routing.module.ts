@@ -6,7 +6,7 @@ import { IndexComponent } from './index/index.component';
 import { PostComponent } from './post/post.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateComponent } from './dashboard/create/create.component';
-
+import { EditComponent } from './dashboard/edit/edit.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full'},
@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent }, 
   { path: 'post/:id', component: PostComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'dashboard/create', component: CreateComponent }
+  { path: 'dashboard/create', component: CreateComponent },
+  { path: 'dashboard/edit/:id', component: EditComponent }
 
 ];
 

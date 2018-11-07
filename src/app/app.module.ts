@@ -19,7 +19,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PostPreviewComponent } from './index/post-preview/post-preview.component';
 import { CreateComponent } from './dashboard/create/create.component';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { FormsModule } from '@angular/forms';
+import { EditComponent } from './dashboard/edit/edit.component'; // <-- NgModel lives here
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
     PostComponent,
     DashboardComponent,
     PostPreviewComponent,
-    CreateComponent
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
