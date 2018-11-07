@@ -4,6 +4,7 @@ import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection 
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { TdTextEditorComponent } from '@covalent/text-editor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
@@ -32,7 +33,8 @@ export class EditComponent implements OnInit {
 
   constructor(
     private afs: AngularFirestore,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     const id = '' + this.route.snapshot.paramMap.get('id');
     //this.loaded = true;
@@ -53,21 +55,7 @@ export class EditComponent implements OnInit {
   }
 
   publishPost() {
-    // Persist a document id
-    //const id = this.afs.createId();
-    let month = new Array();
-    month[0] = "January";
-    month[1] = "February";
-    month[2] = "March";
-    month[3] = "April";
-    month[4] = "May";
-    month[5] = "June";
-    month[6] = "July";
-    month[7] = "August";
-    month[8] = "September";
-    month[9] = "October";
-    month[10] = "November";
-    month[11] = "December";
     this.itemsCollection.doc(this.post.id).set(this.post);
+    this.router.navigate(['./post/' + this.post.id]);
   }
 }
