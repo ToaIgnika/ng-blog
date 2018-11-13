@@ -25,7 +25,8 @@ export class EditComponent implements OnInit {
     bg_image: "",
     author: "",
     date: "",
-    text: ""
+    text: "",
+    datestamp: 0
   }
   loaded: boolean;
   @ViewChild('textEditor') private _textEditor: TdTextEditorComponent;

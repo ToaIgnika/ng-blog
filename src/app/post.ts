@@ -6,4 +6,5 @@ export class Post {
     author : string;
     date : string;
     text : string;
+    datestamp : number;
 }

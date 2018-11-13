@@ -23,7 +23,8 @@ export class CreateComponent implements OnInit {
     bg_image: "assets/img/stock-bg.jpg",
     author: "",
     date: "",
-    text: ""
+    text: "",
+    datestamp : 0
   }
 
 
@@ -63,6 +64,7 @@ export class CreateComponent implements OnInit {
     let date = new Date();
     this.post.date = '' + month[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
     this.post.author = 'ToaIgnika';
+    this.post.datestamp = date.getTime();
     this.itemsCollection.doc(this.post.id).set(this.post);
     this.router.navigate(['./post/' + this.post.id]);
   }

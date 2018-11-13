@@ -14,8 +14,8 @@
             <li class="nav-item">
               <a class="nav-link" routerLink="/about">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/post/1">Sample Post</a>
+            <li class="nav-item" *ngIf="this.loaded == true">
+              <a class="nav-link" routerLink="/post/{{post.id}}">Latest Blog</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/contact">Contact</a>
@@ -30,3 +30,8 @@
         </div>
       </div>
     </nav>
+    <script> 
+    $('.nav a').on('click', function(){
+    $('.navbar-toggler').click(); //bootstrap 4.x
+});
+    </script>
