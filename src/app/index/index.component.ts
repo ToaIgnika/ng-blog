@@ -18,8 +18,7 @@ export class IndexComponent implements OnInit {
   constructor(
     private afs: AngularFirestore
   ) { 
-    this.itemsCollection = afs.collection<Post>('items');
-    this.items = this.itemsCollection.valueChanges();
+    this.items = afs.collection('items', ref => ref.orderBy('datestamp', 'desc')).valueChanges();
   }
 
   ngOnInit() {
